@@ -1,0 +1,7 @@
+<%= flash[:notice]%>
+<h1>Invoice List </h1>
+<%= link_to "Create Invoice", new_invoice_path %>
+
+<% @all_invoices.each do |invoice| %>
+    <p><%= invoice.product_name %>  => <%= invoice.amount%> <%= link_to "Update Invoice", edit_invoice_path(invoice.id)%> </p>
+<% end %>
